@@ -24,11 +24,11 @@ export default Ember.Component.extend({
   },
 
   actions: {
-  	setRating: function(newRating) {
-  		this.get('on-click')({
-  			item: this.get('item'),
-  			rating: newRating
-  		});
-  	}
+    setRating: function(newRating) {
+      this.get('on-click')({
+        item: this.get('item'),
+        rating: newRating
+      });
+    }
   }
 });
