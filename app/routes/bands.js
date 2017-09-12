@@ -3,8 +3,8 @@ import Band from '../models/band';
 import Song from '../models/song';
 
 export default Ember.Route.extend({
-	model: function() {
-   var blackDog = Song.create({
+  model: function() {
+    var blackDog = Song.create({
       title: 'Black Dog',
       band: 'Led Zeppelin',
       rating: 3
@@ -30,12 +30,12 @@ export default Ember.Route.extend({
 
     var ledZeppelin = Band.create({
       name: 'Led Zeppelin',
-      songs: [blackDog] 
+      songs: [blackDog]
     });
     var pearlJam = Band.create({
-      name: 'Pearl Jam', 
-      description: 'Pearl Jam is an American rock band, formed in Seattle, Washington in 1990',
-      songs: [yellowLedbetter, daughter] 
+      name: 'Pearl Jam',
+      description: 'Pearl Jam is an American rock band, formed in Seattle, Washington in 1990.',
+      songs: [yellowLedbetter, daughter],
     });
     var fooFighters = Band.create({
       name: 'Foo Fighters',
@@ -46,6 +46,10 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    didTransition: function() {
+      document.title = 'Bands - Rock & Roll';
+    },
+
     createBand: function() {
       var name = this.get('controller').get('name');
       var band = Band.create({ name: name });
